@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div {
+            position: absolute; /*一定是absolute*/
+            height: 750px;
+            width: 750px;
+            /*background: rgba(255, 200, 100, 0.8);*/
+            text-align: center;
+            font-size: 130px;
+            background-position:50% 50%;
+            background-size: cover;
+        }
+
+        #box {
+            transform-style: preserve-3d;
+            perspective-origin: left;
+            transform: rotateX(-30deg) rotateY(-80deg);
+            height: 750px;
+            width: 750px;
+            animation: roate linear 20s infinite;
+        }
+
+        @keyframes roate {
+            from {
+                transform: rotateX(0) rotateY(0);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        #box .one {
+            -webkit-transform: translateZ(375px);
+            background-image: url("images/photo1.jpg");
+        }
+
+        #box .two {
+            -webkit-transform: rotateX(-90deg) translateZ(375px);
+            background-image: url("images/photo2.jpg");
+
+        }
+
+        #box .three {
+            -webkit-transform: rotateY(180deg) rotateX(90deg) translateZ(375px);
+            background-image: url("images/photo3.jpg");
+        }
+
+        #box .four {
+            -webkit-transform: rotateY(270deg) translateZ(375px);
+            background-image: url("images/photo4.jpg");
+        }
+
+        #box .five {
+            -webkit-transform: rotateY(-180deg) rotateZ(90deg) translateZ(375px);
+            background-image: url("images/photo5.jpg");
+        }
+
+        #box .six {
+            -webkit-transform: rotateY(90deg) translateZ(375px);
+            background-image: url("images/photo6.jpg");
+        }
+
+    </style>
+</head>
+<body>
+<div id="view" style="width:750px;height:750px;margin:270px auto 0 auto">
+    <div id="box">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+        <div class="six"></div>
+    </div>
+</div>
+</body>
+</html>
